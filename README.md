@@ -34,3 +34,36 @@
     "moduleResolution": "node",
     "baseUrl": "./src",
     "experimentalDecorators": true,
+
+
+### Lession 11
+- Tạo thư  mục 'src'
+- Tạo file 'server.ts' nằm trong thư mục 'src'
+
+- yarn add express                  => cài express và đặt trong dependeci
+- yarn add @type/express --dev      => đặt trong devDependenci
+
+(trong file src/server.js)
+import express from 'express';
+const port = process.env.POST || 5000;
+const app = express();              => kiểu của app là 1 class tên express.
+
+app.get('/', (req: Request, res: Response) => {
+    res.send('API is running ...');
+})
+
+app.listen(port, () => {
+    console.log(`Server is listening on port ${port}`);
+})
+
+- yarn add typescript nodemon ts-code --dev
++ nodemon: reload server 
++ ts-code: chạy trực tiếp file ts
++ --dev : chỉ cài trên môi trường develop
+
+- Cài Postman => để test API.
+
+"scripts": {
+    ... ,
+    "server": "nodemon src/server.ts"
+}
