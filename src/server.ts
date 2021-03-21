@@ -1,14 +1,9 @@
-import express from 'express';
+import App from "./app";
 
-const port = process.env.POST || 5000;
+import { IndexRoute } from "./module/index";
 
-const app = express();
+const routes = [new IndexRoute()];
 
-app.get('/', (req, res) => {
-    res.send("Hello ...");
-});
+const app = new App(routes);
 
-app.listen(port, ()=>{
-    console.log(`Server is listening on port ${port}`)
-});
-
+app.listen();
