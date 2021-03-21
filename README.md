@@ -67,3 +67,11 @@ app.listen(port, () => {
     ... ,
     "server": "nodemon src/server.ts"
 }
+
+
+### Lession 14
+- dotenv: npm install dotenv
+- cross-env: hỗ trợ nhiều môi trường 1 lúc.
+    npm install --save-dev cross-env
+- .env: chứa các thành phần ẩn, không public ra ngoài.
+    (link kết nối database, ...)
