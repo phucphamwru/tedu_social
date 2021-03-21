@@ -75,3 +75,17 @@ app.listen(port, () => {
     npm install --save-dev cross-env
 - .env: chứa các thành phần ẩn, không public ra ngoài.
     (link kết nối database, ...)
+- Kiểm tra sự tồn tại của connectString - biến chứa link kết nối đến Database.
+
+
+### Lession 15
+Cài đặt package cho middlewear
+- HPP: bảo vệ những cuộc tấn công qua chống lại parameter HTTP.
+- Helmet: cài thêm các thành phần bảo mật = các HTTP headers khác nhau.
+- Morgan: dùng cho Logger. (kiểu in console.log)
+- cros: bên trung gian - cho phép những thành phần client nào thỏa mãn mới được vào.
+- winston: ghi log - màu mè cho đẹp.
+
+Nhúng vào app() khi khởi chạy chương trình ở môi trường 'production'.
+    +) Nếu ở môi trường 'production thì mới nhúng vào.
+    +) Nếu ở môi trường 'develop' thì không cần nhúng.

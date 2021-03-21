@@ -2,21 +2,30 @@ import express from "express";
 import { Route } from "core/interfaces";
 import mongoose from "mongoose";
 
+import hpp from "hpp";
+import helmet from 'helmet';
+import morgan from 'morgan';
+import cors from 'cors';
+import { Logger } from "./core/utils";
+
 class App {
     public app: express.Application;
     public port: string | number;
+    public production : boolean;
 
     constructor(routes: Route[]) {
         this.app = express();
         this.port = process.env.PORT || 5000;
+        this.production = process.env.NODE_ENV == 'production' ? true : false;
 
         this.initializeRoutes(routes);
         this.connectToDatabase();
+        this.initializeMiddleware();
     }
 
     public listen() {
         this.app.listen(this.port, ()=>{
-            console.log(`Server is listening on port ${this.port}`)
+            Logger.info(`Server is listening on port ${this.port}`);    //Logger.info <=> console.log
         });
     }
 
@@ -27,20 +36,34 @@ class App {
     }
 
     private connectToDatabase() {
-        try {
-            const connectString = process.env.MONGO_URI;
-            if (!connectString) {
-                console.log("Connection string in invalid");
-                return;
-            }
-            mongoose.connect(connectString, {
-                useNewUrlParser: true,
-                useUnifiedTopology: true,
-                useFindAndModify: false,
-                useCreateIndex: true
+        const connectString = process.env.MONGO_URI;
+        if (!connectString) {
+            Logger.error("Connection string in invalid");
+            return;
+        }
+        mongoose
+        .connect(connectString, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useFindAndModify: false,
+            useCreateIndex: true
+        })
+        .catch((reason) => {
+            Logger.error(reason);
             });
-        } catch (error) {
-            console.log('Connect to database error');
+    
+        Logger.info('Database connected...');
+    }
+
+    private initializeMiddleware() {
+        if(this.production) {
+            this.app.use(hpp());
+            this.app.use(helmet());
+            this.app.use(morgan('combined'));
+            this.app.use(cors({ origin: 'your.domain.com', credentials: true }));
+        } else {
+            this.app.use(morgan('dev'));
+            this.app.use(cors({ origin: true, credentials: true }));
         }
     }
 }
