@@ -95,3 +95,13 @@ Nhúng vào app() khi khởi chạy chương trình ở môi trường 'producti
 ### Lession 16
 Validate cho các biến môi trường.
 - envalid: để validate các biến môi trường.
+
+
+### Lession 17
+Khai báo module trong typescript.
+- Thay toàn bộ đường dân thông thường:
+    +) dấu * ám chỉ đến tất cả các folder, các file trong 1 folder.
+    +) @core : đường dần đến thư mục core.
+    +) @module: đường dẫn đến thư mục module.
+- Cài đặt tsconfig-paths : để tải các mô-đun có vị trí được chỉ định trong phần đường dẫn.
+    "exec": "ts-node -r tsconfig-paths/register"
