@@ -121,3 +121,10 @@ Ghi Log và Combie.
 Debug
 Tạo .vscode và định nghĩa launch.json -> khu vực debug.
 Debug -> Node: Nodem -> Pick ts-config. 
+
+
+### Lession 21
+Tạo UserSchema với Mongoose
+- Tạo module Users : index, route, controller, service, model, interface.
+- gravarta: nơi để lưu trữ ảnh trên internet.
+- Mongoose khai báo module dùng schema...
