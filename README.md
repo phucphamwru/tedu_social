@@ -105,3 +105,9 @@ Khai báo module trong typescript.
     +) @module: đường dẫn đến thư mục module.
 - Cài đặt tsconfig-paths : để tải các mô-đun có vị trí được chỉ định trong phần đường dẫn.
     "exec": "ts-node -r tsconfig-paths/register"
+
+
+### Lession 18
+Handle error middleware.
+- tạo thư mục Exceptions -> để chứa các exception dùng chung.
+- tạo thư mục Middleware -> để chứa các middleware.
