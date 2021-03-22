@@ -115,3 +115,9 @@ Handle error middleware.
 
 ### Lession 19
 Ghi Log và Combie.
+
+
+### Lession 20
+Debug
+Tạo .vscode và định nghĩa launch.json -> khu vực debug.
+Debug -> Node: Nodem -> Pick ts-config. 
