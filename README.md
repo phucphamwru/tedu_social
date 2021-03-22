@@ -111,3 +111,7 @@ Khai báo module trong typescript.
 Handle error middleware.
 - tạo thư mục Exceptions -> để chứa các exception dùng chung.
 - tạo thư mục Middleware -> để chứa các middleware.
+
+
+### Lession 19
+Ghi Log và Combie.
