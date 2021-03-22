@@ -36,20 +36,20 @@ class App {
     }
 
     private connectToDatabase() {
-        const connectString = process.env.MONGO_URI;
+        const connectString = process.env.MONGODB_URI;
         if (!connectString) {
             Logger.error("Connection string in invalid");
             return;
         }
         mongoose
-        .connect(connectString, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useFindAndModify: false,
-            useCreateIndex: true
-        })
-        .catch((reason) => {
-            Logger.error(reason);
+            .connect(connectString, {
+                useNewUrlParser: true,
+                useUnifiedTopology: true,
+                useFindAndModify: false,
+                useCreateIndex: true
+            })
+            .catch((reason) => {
+                Logger.error(reason);
             });
     
         Logger.info('Database connected...');

@@ -70,6 +70,7 @@ app.listen(port, () => {
 
 
 ### Lession 14
+Cài đặt biến môi trường.
 - dotenv: npm install dotenv
 - cross-env: hỗ trợ nhiều môi trường 1 lúc.
     npm install --save-dev cross-env
@@ -89,3 +90,8 @@ Cài đặt package cho middlewear
 Nhúng vào app() khi khởi chạy chương trình ở môi trường 'production'.
     +) Nếu ở môi trường 'production thì mới nhúng vào.
     +) Nếu ở môi trường 'develop' thì không cần nhúng.
+
+
+### Lession 16
+Validate cho các biến môi trường.
+- envalid: để validate các biến môi trường.
