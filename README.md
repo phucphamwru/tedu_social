@@ -128,3 +128,31 @@ Tạo UserSchema với Mongoose
 - Tạo module Users : index, route, controller, service, model, interface.
 - gravarta: nơi để lưu trữ ảnh trên internet.
 - Mongoose khai báo module dùng schema...
+
+
+
+### Lession 22
+(tiếp với 21)
+- Tạo Service: 
+- Tạo Dto -> để validate dễ dàng hơn.
+- Utlis/helper.js để kiểm tra Object có thực sự tồn tại.
+- Thư viện bcryptjs -> để mã hóa, và giải mã trong nodejs.
+- auth? Dtos?
+- cài thêm các thư viện: bcryptjs, jsonwebtoken, gravatar
+    + bcryptjs: để mã hóa.
+    + gravatar: nơi chứa đường dẫn ảnh (image).
+    + jsonwebtoken: để chứa token.
+
+
+Trong service:
+	- gọi DbModel.
+		+ gọi ra để tham chiếu.
+
+	- tạo token.
+		+ tạo token cho user -> để service trả về.
+
+	- tạo user:
+		+ Kiểm tra model.
+		+ Kiểm tra user có tồn tại trong model.
+		+ Cấu trúc cho các biến cần thêm vào trong thuộc tính user.
+		+ giá trị trả về là token.
