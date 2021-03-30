@@ -1,5 +1,5 @@
-class httpException extends Error {
-    public status: number;
+class httpException extends Error {     //httpException kế thừa Error để chứa các lỗi xảy ra.
+    public status: number;              //các số REST APi.
     public message: string;
 
     constructor(status: number, message: string){

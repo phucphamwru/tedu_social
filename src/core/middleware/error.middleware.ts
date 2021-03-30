@@ -1,3 +1,6 @@
+//Nhiệm vụ file này là lấy dữ liệu -> kiểm tra và ghi log.
+//Các lỗi sai sẽ đc vứt về file này để hiển thị ra ngoài màn hình.
+
 import { httpException } from "@core/exceptions";
 import { Logger } from "@core/utils";
 import { NextFunction, Request, Response } from "express";

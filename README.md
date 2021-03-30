@@ -133,7 +133,7 @@ Tạo UserSchema với Mongoose
 
 ### Lession 22
 (tiếp với 21)
-- Tạo Service: 
+- Tạo Service: tạo Token và User.
 - Tạo Dto -> để validate dễ dàng hơn.
 - Utlis/helper.js để kiểm tra Object có thực sự tồn tại.
 - Thư viện bcryptjs -> để mã hóa, và giải mã trong nodejs.
@@ -156,3 +156,37 @@ Trong service:
 		+ Kiểm tra user có tồn tại trong model.
 		+ Cấu trúc cho các biến cần thêm vào trong thuộc tính user.
 		+ giá trị trả về là token.
+
+
+### Lession 23
+REST API - đọc, tìm hiểu cái này.
+    +) 2xx  thành công.
+    +) 3xx  redirec - chuyển trang.
+    +) 4xx  lỗi của client.
+    +) 5xx  lỗi của server.
+
+Controller: 
+    - gọi Service.
+    - Lấy ra dữ liệu từ Client gửi lên.
+        +) req.body.
+    - Sử dụng service để tạo User và lấy token.
+        +) Sử dụng dữ liệu được truyền vào -> tạo và trả về token.
+    - Trả API có token về phía Client.
+
+Route:
+    - path = '/api/users'
+    - Gọi Controller -> xử lý.
+
+server: nhúng thêm UserRoute.
+app: thêm 2 cái bên dưới và để Middleware chạy trước Route.
+    this.app.use(express.json());       //nhận dữ liệu dạng JSON
+    this.app.use(express.urlencoded({ extended: true }));
+
+
+
+### Lession 24
+Cài thư viện class-validator:
+    +)npm install class-validator --save
+    +)chỉ dùng trên Dtos
+
+Cài thư viện class-transfomer ->
